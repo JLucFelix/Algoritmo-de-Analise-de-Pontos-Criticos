@@ -68,3 +68,64 @@ Você precisará do Python 3 e das bibliotecas listadas.
 
     Clone este repositório:
     Bash
+
+git clone https://github.com/seu-usuario/nome-do-repositorio.git
+cd nome-do-repositorio
+
+Instale as dependências:
+Bash
+
+pip install sympy matplotlib numpy
+
+3. Execução
+
+Rode o script principal (que contém o código de plotagem):
+Bash
+
+python main.py
+
+4. Inserindo uma Função
+
+Você será solicitado a digitar a função. Use a sintaxe do Python:
+
+    ** para potências (ex: x**2 para x2)
+
+    * para multiplicação (ex: 3*x para 3x)
+
+    / para divisão (ex: 1/x)
+
+    Funções como sp.sin(x), sp.cos(x), sp.exp(x) também são suportadas (desde que o sp esteja no contexto, ou simplificando sin(x) etc.).
+
+Exemplos de entrada:
+
+x**3 - 3*x + 2
+4*x**3 + 3*x**2 - 6*x
+(x-1)**3
+1/(x**2 - 1)
+
+🧠 Como Funciona a Análise
+
+O processo de análise no algoritmo_pontoscriticos.py é o coração do projeto:
+
+    Análise de Pontos Críticos (f′(x)=0):
+
+        O script calcula a primeira derivada f′(x).
+
+        Resolve f′(x)=0 para encontrar os pontos críticos p.
+
+        Para cada p, ele aplica o Teste da Segunda Derivada:
+
+            Se f′′(p)>0, é um mínimo local.
+
+            Se f′′(p)<0, é um máximo local.
+
+            Se f′′(p)=0, o teste é inconclusivo (e o script reporta isso).
+
+    Análise de Pontos de Inflexão (f′′(x)=0):
+
+        O script calcula a segunda derivada f′′(x) e resolve f′′(x)=0 para encontrar os candidatos a pontos de inflexão, i.
+
+        Para confirmar a inflexão, o script realiza um Teste de Vizinhança (neighborhood test). Ele verifica se o sinal de f′′(x) muda em uma pequena vizinhança ao redor de i.
+
+        Ele avalia f′′(i−ϵ) e f′′(i+ϵ) (onde ϵ é um valor pequeno). Se os sinais forem opostos (resultado_antes * resultado_depois < 0), a mudança de concavidade é confirmada, e o ponto é reportado como um ponto de inflexão.
+
