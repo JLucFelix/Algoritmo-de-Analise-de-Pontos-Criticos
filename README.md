@@ -1,0 +1,1 @@
+# Algoritmo-de-Analise-de-Pontos-Criticos
