@@ -22,8 +22,6 @@ Este é um projeto de Python para a matéria de Cálculo Diferencial e Integral 
 
 📊 Exemplo de Resultado
 
-(Recomendação: rode o script com a função x**3 - 6*x**2 + 9*x + 1, tire um screenshot do gráfico e salve no seu repositório como demo.png. Depois, substitua a linha abaixo)
-
 ![Demo Screenshot](exemplo.png)
 
 🛠️ Tecnologias e Bibliotecas
